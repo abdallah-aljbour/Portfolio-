@@ -1,45 +1,141 @@
 @use "../../../styles/abstracts/variables.scss" as *;
+@use "../../../styles/abstracts/mixins" as *;
 
 .hero {
-  background-color: $color-background;
-  padding: 4rem 2rem;
-  text-align: center;
-  height: 100vh;
+  min-height: 100vh;
+  background: linear-gradient(135deg, $gray-50 0%, $white 100%);
+  display: flex;
+  align-items: center;
+  padding: $space-20 0;
 
-  .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+  &__container {
+    @include container;
+  }
 
-    h1 {
-      color: $color-text;
-      font-size: 3rem;
-      font-weight: bold;
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-12;
+    align-items: center;
 
-      .highlight {
-        color: $color-highlight;
-      }
+    @include responsive(lg) {
+      grid-template-columns: 1fr 1fr;
+      gap: $space-16;
+    }
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: $text-4xl;
+    font-weight: $font-bold;
+    line-height: $leading-tight;
+    color: $gray-900;
+    margin-bottom: $space-6;
+
+    @include responsive(md) {
+      font-size: $text-5xl;
     }
 
-    p {
-      color: $color-text;
-      font-size: 1.2rem;
-      margin-top: 1rem;
+    @include responsive(lg) {
+      font-size: $text-6xl;
     }
+  }
 
-    button {
-      margin-top: 2rem;
-      background-color: $color-primary;
-      color: $color-text;
-      border: none;
-      padding: 0.8rem 2rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+  &__highlight {
+    color: $primary;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, $primary, $accent);
+      border-radius: $radius-full;
+    }
+  }
+
+  &__description {
+    font-size: $text-lg;
+    color: $gray-600;
+    line-height: $leading-relaxed;
+    margin-bottom: $space-8;
+    max-width: 600px;
+
+    @include responsive(lg) {
+      font-size: $text-xl;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $space-4;
+    flex-direction: column;
+
+    @include responsive(sm) {
+      flex-direction: row;
+    }
+  }
+
+  &__button {
+    @include button-base;
+
+    &--primary {
+      background: $primary;
+      color: $white;
 
       &:hover {
-        background-color: $color-hover;
+        background: $primary-dark;
+        transform: translateY(-2px);
+        box-shadow: $shadow-md;
       }
     }
+
+    &--secondary {
+      background: transparent;
+      color: $gray-700;
+      border: 2px solid $gray-300;
+
+      &:hover {
+        border-color: $primary;
+        color: $primary;
+        background: $primary-light;
+        background-attachment: 0.1;
+      }
+    }
+  }
+
+  &__visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+
+    @include responsive(lg) {
+      order: 2;
+    }
+  }
+
+  &__code-preview {
+    background: $gray-800;
+    color: $gray-100;
+    padding: $space-8;
+    border-radius: $radius-lg;
+    font-family: $font-mono;
+    font-size: $text-sm;
+    line-height: $leading-relaxed;
+    box-shadow: $shadow-lg;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  &__code-comment {
+    color: $gray-400;
+  }
+
+  &__code-keyword {
+    color: $primary-light;
   }
 }
