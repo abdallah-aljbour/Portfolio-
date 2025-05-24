@@ -1,5 +1,5 @@
 @use "../../../styles/abstracts/variables.scss" as *;
-@use "../../../styles/abstracts/mixins" as *;
+@use "../../../styles/abstracts//mixins.scss" as *;
 
 .hero {
   min-height: 100vh;
