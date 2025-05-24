@@ -1,0 +1,85 @@
+// src/styles/abstracts/_mixins.scss
+@use "./variables.scss" as *;
+
+// Responsive breakpoints
+@mixin responsive($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  }
+  @if $breakpoint == md {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  }
+  @if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+  @if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+// Container
+@mixin container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+
+  @include responsive(sm) {
+    padding: 0 $space-8;
+  }
+}
+
+// Button base
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-3 $space-6;
+  border-radius: $radius-md;
+  font-family: $font-body;
+  font-weight: $font-medium;
+  font-size: $text-base;
+  text-decoration: none;
+  transition: $transition-base;
+  cursor: pointer;
+  border: none;
+
+  &:focus {
+    outline: 2px solid $primary-light;
+    outline-offset: 2px;
+  }
+}
+
+// Card component
+@mixin card {
+  background: $white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+  transition: $transition-base;
+  border: 1px solid $gray-200;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+}
+
+// Visually hidden (for accessibility)
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
