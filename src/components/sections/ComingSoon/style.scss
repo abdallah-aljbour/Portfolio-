@@ -230,6 +230,8 @@
   margin-top: $space-16;
 
   &__text {
+    display: flex;
+    justify-content: center;
     font-size: $text-lg;
     color: $gray-700;
     margin-bottom: $space-6;
