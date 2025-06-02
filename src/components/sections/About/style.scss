@@ -1,0 +1,158 @@
+// src/components/sections/About/style.scss
+@use "../../../styles/abstracts/variables" as *;
+@use "../../../styles/abstracts/mixins" as *;
+
+.about {
+  padding: $space-20 0;
+  background: $white;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, $gray-200, transparent);
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $space-12;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: $text-3xl;
+    font-weight: $font-bold;
+    color: $gray-900;
+    margin-bottom: $space-6;
+
+    @include responsive(md) {
+      font-size: $text-4xl;
+    }
+  }
+
+  &__highlight {
+    color: $primary;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, $primary, $accent);
+      border-radius: $radius-full;
+    }
+  }
+
+  &__description {
+    font-size: $text-lg;
+    color: $gray-600;
+    line-height: $leading-relaxed;
+    max-width: 800px;
+    margin: 0 auto;
+
+    @include responsive(lg) {
+      font-size: $text-xl;
+    }
+  }
+
+  &__content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  &__skills {
+    margin-bottom: $space-12;
+  }
+
+  &__skills-title {
+    font-family: $font-heading;
+    font-size: $text-2xl;
+    font-weight: $font-semibold;
+    color: $gray-800;
+    text-align: center;
+    margin-bottom: $space-8;
+  }
+
+  &__skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: $space-4;
+
+    @include responsive(sm) {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: $space-6;
+    }
+
+    @include responsive(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__skill-item {
+    display: flex;
+    align-items: center;
+    gap: $space-3;
+    padding: $space-4;
+    background: $gray-50;
+    border: 1px solid $gray-200;
+    border-radius: $radius-lg;
+    transition: $transition-base;
+
+    &:hover {
+      background: $white;
+      border-color: $primary-light;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+
+      .about__skill-icon {
+        color: $primary;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__skill-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: $accent;
+    font-size: $text-base;
+    font-weight: $font-bold;
+    transition: $transition-base;
+  }
+
+  &__skill-name {
+    font-family: $font-body;
+    font-size: $text-base;
+    font-weight: $font-medium;
+    color: $gray-700;
+  }
+
+  &__action {
+    display: flex;
+    justify-content: center;
+    margin-top: $space-12;
+  }
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+}
