@@ -89,6 +89,12 @@ const Skills = () => {
     .flatMap((cat) => cat.skills)
     .filter((skill) => skill.level >= 90).length;
 
+  // Handle CV download/view
+  const handleDownloadCV = () => {
+    // Open the CV in a new tab
+    window.open("/public/Abdallah -Full Stack Web Developer.pdf");
+  };
+
   return (
     <section className="skills">
       <div className="skills__container">
@@ -238,7 +244,13 @@ const Skills = () => {
             Looking for someone with these skills? Let's build something amazing
             together!
           </p>
-          <button className="skills__cta-button">Download My Resume</button>
+          <button
+            className="skills__cta-button"
+            onClick={handleDownloadCV}
+            aria-label="Download my resume as PDF"
+          >
+            Download My Resume
+          </button>
         </div>
       </div>
     </section>
