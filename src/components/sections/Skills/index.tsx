@@ -238,7 +238,15 @@ const Skills = () => {
             Looking for someone with these skills? Let's build something amazing
             together!
           </p>
-          <button className="skills__cta-button">Download My Resume</button>
+          <a
+            href="/Abdallah -Full Stack Web Developer.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="skills__cta-button"
+            download="Abdallah-Full-Stack-Web-Developer.pdf"
+          >
+            Download My Resume
+          </a>
         </div>
       </div>
     </section>
