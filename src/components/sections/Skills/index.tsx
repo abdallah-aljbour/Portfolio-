@@ -89,37 +89,12 @@ const Skills = () => {
     .flatMap((cat) => cat.skills)
     .filter((skill) => skill.level >= 90).length;
 
+  // Handle CV download/view
   const handleDownloadCV = () => {
-    try {
-      // Create the CV URL with the current origin to ensure it works in production
-      const cvUrl = `${window.location.origin}/public/Abdallah -Full Stack Web Developer.pdf`;
-
-      // Create a temporary link element for downloading
-      const link = document.createElement("a");
-      link.href = cvUrl;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-
-      // Try to trigger download attribute (some browsers support this)
-      link.download = "Abdallah_Aljbour_Resume.pdf";
-
-      // Append to body, click, and remove
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
-      // Fallback: Also try window.open as backup
-      setTimeout(() => {
-        window.open(cvUrl, "_blank", "noopener,noreferrer");
-      }, 100);
-    } catch (error) {
-      console.error("Error opening CV:", error);
-      // Ultimate fallback - alert user
-      alert(
-        "Sorry, there was an issue opening the CV. Please contact me directly for my resume."
-      );
-    }
+    // Open the CV in a new tab
+    window.open("/public/Abdallah -Full Stack Web Developer.pdf", "_blank");
   };
+
   return (
     <section className="skills">
       <div className="skills__container">
