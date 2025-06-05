@@ -208,7 +208,7 @@ const Skills = () => {
               <div className="timeline-item__content">
                 <h4>Frontend Developer</h4>
                 <p>Specializing in React & Modern JavaScript</p>
-                <span className="timeline-item__date">2022 - Present</span>
+                <span className="timeline-item__date">May 2024 – Present</span>
               </div>
             </div>
             <div className="timeline-item">
@@ -216,7 +216,9 @@ const Skills = () => {
               <div className="timeline-item__content">
                 <h4>Micro Frontend Architecture</h4>
                 <p>Building scalable applications with Single-SPA</p>
-                <span className="timeline-item__date">2023</span>
+                <span className="timeline-item__date">
+                  December 2024 – Present
+                </span>
               </div>
             </div>
             <div className="timeline-item">
@@ -224,7 +226,7 @@ const Skills = () => {
               <div className="timeline-item__content">
                 <h4>Open Banking Projects</h4>
                 <p>Working with secure financial APIs and integrations</p>
-                <span className="timeline-item__date">2023 - 2024</span>
+                <span className="timeline-item__date">2025 – Present</span>
               </div>
             </div>
           </div>
