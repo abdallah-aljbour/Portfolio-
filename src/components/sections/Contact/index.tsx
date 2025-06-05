@@ -277,7 +277,7 @@ const Contact = () => {
             </p>
             <div className="contact__cta-actions">
               <a
-                href="https://wa.me/962791234567?text=Hi%20Abdallah!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+                href="https://wa.me/962788565171?text=Hi%20Abdallah!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact__cta-button contact__cta-button--whatsapp"
@@ -286,7 +286,7 @@ const Contact = () => {
                 <span>Chat on WhatsApp</span>
               </a>
               <a
-                href="mailto:abdalla.aljbour@example.com?subject=Let's%20Work%20Together!"
+                href="mailto:abdullahaljbour01@gmail.com?subject=Let's%20Work%20Together!"
                 className="contact__cta-button contact__cta-button--email"
               >
                 <span>📧</span>
