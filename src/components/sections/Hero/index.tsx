@@ -16,12 +16,16 @@ const Hero = () => {
             frontend architecture.
           </p>
           <div className="hero__actions">
-            <button className="hero__button hero__button--primary">
-              Start a Project
-            </button>
-            <button className="hero__button hero__button--secondary">
-              View My Work
-            </button>
+            <div className="header__cta">
+              <a
+                href="https://www.fiverr.com/abdallahjbour01"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="header__cta-button"
+              >
+                Start a Project
+              </a>
+            </div>
           </div>
         </div>
         <div className="hero__visual">
