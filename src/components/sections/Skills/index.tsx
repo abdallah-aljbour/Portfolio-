@@ -231,23 +231,6 @@ const Skills = () => {
             </div>
           </div>
         </div>
-
-        {/* Call to Action */}
-        <div className="skills__cta">
-          <p className="skills__cta-text">
-            Looking for someone with these skills? Let's build something amazing
-            together!
-          </p>
-          <a
-            href="/Abdallah -Full Stack Web Developer.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="skills__cta-button"
-            download="Abdallah-Full-Stack-Web-Developer.pdf"
-          >
-            Download My Resume
-          </a>
-        </div>
       </div>
     </section>
   );

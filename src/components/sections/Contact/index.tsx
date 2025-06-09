@@ -13,7 +13,6 @@ interface ContactMethod {
 }
 
 const Contact = () => {
-  const [isMessageSent, setIsMessageSent] = useState(false);
   const [hoveredMethod, setHoveredMethod] = useState<string | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [copySuccess, setCopySuccess] = useState<string | null>(null);
@@ -48,15 +47,6 @@ const Contact = () => {
       color: "#0077B5",
       hoverText: "Connect professionally!",
     },
-    {
-      id: "github",
-      icon: "🚀",
-      label: "GitHub",
-      value: "@abdallah-aljbour",
-      link: "https://github.com/abdallah-aljbour",
-      color: "#171515",
-      hoverText: "Check my code!",
-    },
   ];
 
   // Track mouse movement for interactive effects
@@ -81,14 +71,6 @@ const Contact = () => {
       setCopySuccess(id);
       setTimeout(() => setCopySuccess(null), 2000);
     });
-  };
-
-  // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // In a real app, you'd send this to a backend
-    setIsMessageSent(true);
-    setTimeout(() => setIsMessageSent(false), 3000);
   };
 
   // Current time in Jordan
@@ -202,67 +184,6 @@ const Contact = () => {
           </div>
 
           {/* Quick Message Form */}
-          <div className="contact__form-section">
-            <h3 className="contact__section-title">Send a Quick Message</h3>
-            <form className="contact-form" onSubmit={handleSubmit}>
-              <div className="contact-form__grid">
-                <div className="contact-form__group">
-                  <input
-                    type="text"
-                    id="name"
-                    className="contact-form__input"
-                    placeholder=" "
-                    required
-                  />
-                  <label htmlFor="name" className="contact-form__label">
-                    Your Name
-                  </label>
-                </div>
-                <div className="contact-form__group">
-                  <input
-                    type="email"
-                    id="email"
-                    className="contact-form__input"
-                    placeholder=" "
-                    required
-                  />
-                  <label htmlFor="email" className="contact-form__label">
-                    Email Address
-                  </label>
-                </div>
-              </div>
-              <div className="contact-form__group">
-                <textarea
-                  id="message"
-                  className="contact-form__textarea"
-                  placeholder=" "
-                  rows={4}
-                  required
-                ></textarea>
-                <label htmlFor="message" className="contact-form__label">
-                  Your Message
-                </label>
-              </div>
-              <button
-                type="submit"
-                className={`contact-form__submit ${
-                  isMessageSent ? "contact-form__submit--sent" : ""
-                }`}
-              >
-                {isMessageSent ? (
-                  <>
-                    <span>Message Sent!</span>
-                    <span className="contact-form__success-icon">✓</span>
-                  </>
-                ) : (
-                  <>
-                    <span>Send Message</span>
-                    <span className="contact-form__arrow">→</span>
-                  </>
-                )}
-              </button>
-            </form>
-          </div>
         </div>
 
         {/* Fun CTA Section */}
