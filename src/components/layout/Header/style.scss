@@ -159,6 +159,8 @@
     transition: all $transition-base;
     position: relative;
     z-index: $z-modal + 10;
+    color: $gray-900; // Force black color for the button
+    -webkit-tap-highlight-color: transparent; // Remove iOS tap highlight
 
     @include responsive(lg) {
       display: none;
