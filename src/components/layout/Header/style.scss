@@ -157,11 +157,12 @@
     cursor: pointer;
     padding: 0;
     transition: all $transition-base;
+    position: relative;
+    z-index: $z-modal + 10;
 
     @include responsive(lg) {
       display: none;
     }
-
     &--active {
       .header__menu-toggle-line {
         &:nth-child(1) {
